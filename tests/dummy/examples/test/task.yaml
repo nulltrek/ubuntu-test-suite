@@ -1,0 +1,4 @@
+summary: Dummy test
+execute: |
+  echo RUN DUMMY TEST
+  $SPREAD_PATH/runners/dummy/main run --input ubuntu-test-suite

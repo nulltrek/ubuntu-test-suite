@@ -1,0 +1,4 @@
+summary: Entire disk
+execute: |
+  echo RUN
+  echo $SPREAD_PATH/runners/gui-vm/main setup

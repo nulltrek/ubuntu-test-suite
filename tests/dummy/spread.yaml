@@ -1,0 +1,18 @@
+project: ubuntu-changelogs
+
+backends:
+  lxd:
+    systems: [ubuntu-26.04]
+
+suites:
+  examples/:
+    summary: RF ISO Testing
+    prepare: |
+      echo PREPARE SUITE
+      $SPREAD_PATH/runners/dummy/main setup
+
+include:
+  - ../../runners/
+  - examples/
+
+path: /home/test/ubuntu-test-suite
