@@ -1,4 +1,7 @@
-summary: Entire disk
+summary: Entire disk install
+environment:
+    ISO: /workspace/resources/resolute-desktop-amd64.iso
+artifacts:
+    - artifacts
 execute: |
-  echo RUN
-  echo $SPREAD_PATH/runners/gui-vm/main setup
+  echo $SPREAD_PATH/runners/gui-vm/main run --iso "$ISO" --test Entire-Disk
