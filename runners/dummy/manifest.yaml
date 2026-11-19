@@ -1,0 +1,11 @@
+name: dummy
+inputs:
+  - name: profile
+
+output: results
+
+entrypoint: |
+  echo "profile=${profile}"
+
+cleanup: |
+  echo Cleanup

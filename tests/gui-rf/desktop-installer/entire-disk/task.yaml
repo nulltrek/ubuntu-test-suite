@@ -1,7 +1,8 @@
 summary: Entire disk install
 environment:
-    ISO: /workspace/resources/resolute-desktop-amd64.iso
+    ISO: /workspace/resources/stonking-desktop-amd64.iso
 artifacts:
     - artifacts
 execute: |
-  echo $SPREAD_PATH/runners/gui-vm/main run --iso "$ISO" --test Entire-Disk
+  $SPREAD_PATH/bin/hwrap $SPREAD_PATH/runners/gui-vm/manifest.yaml run --iso "$ISO" --test Entire-Disk
+  # whoami

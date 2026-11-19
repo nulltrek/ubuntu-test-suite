@@ -45,10 +45,11 @@ suites:
         summary: Testing installer flows with YARF
         prepare: |
           echo PREPARE
-          apt update
-          $SPREAD_PATH/runners/gui-vm/main setup
+          apt-get update
+          $SPREAD_PATH/bin/hwrap $SPREAD_PATH/runners/gui-vm/manifest.yaml setup
 
 include:
+  - ../../bin/hwrap
   - ../../runners/gui-vm/
   - desktop-installer/
 
