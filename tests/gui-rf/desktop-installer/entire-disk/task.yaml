@@ -5,4 +5,3 @@ artifacts:
     - artifacts
 execute: |
   $SPREAD_PATH/bin/hwrap $SPREAD_PATH/runners/gui-vm/manifest.yaml run --iso "$ISO" --test Entire-Disk
-  # whoami
