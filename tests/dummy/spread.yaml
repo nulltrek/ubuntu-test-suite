@@ -6,13 +6,12 @@ backends:
 
 suites:
   examples/:
-    summary: RF ISO Testing
+    summary: Dummy test
     prepare: |
-      echo PREPARE SUITE
-      $SPREAD_PATH/runners/dummy/main setup
+      echo PREPARE
 
 include:
-  - ../../runners/
+  - ../../runners/dummy/
   - examples/
 
 path: /home/test/ubuntu-test-suite

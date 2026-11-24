@@ -8,24 +8,24 @@ backends:
   lxd:
     systems:
       - ubuntu-26.04:
-          vm: true
           cpus: 8
           memory: 30G
           storage: 50G
           mount:
             source: ./resources
             path: /workspace/resources
+          char-devices:
+            - /dev/kvm
+            - /dev/vhost-vsock
 
 suites:
     desktop-installer/:
         summary: Testing installer flows with YARF
         prepare: |
           echo PREPARE
-          apt-get update
-          $SPREAD_PATH/bin/hwrap $SPREAD_PATH/runners/gui-vm/manifest.yaml setup
+          $SPREAD_PATH/runners/gui-vm/setup.py
 
 include:
-  - ../../bin/hwrap
   - ../../runners/gui-vm/
   - desktop-installer/
 

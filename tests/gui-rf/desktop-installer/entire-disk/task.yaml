@@ -1,7 +1,13 @@
 summary: Entire disk install
 environment:
-    ISO: /workspace/resources/stonking-desktop-amd64.iso
+    ISO: /workspace/resources/resolute-desktop-amd64.iso
 artifacts:
     - artifacts
 execute: |
-  $SPREAD_PATH/bin/hwrap $SPREAD_PATH/runners/gui-vm/manifest.yaml run --iso "$ISO" --test Entire-Disk
+    echo RUN
+    $SPREAD_PATH/runners/gui-vm/run.py \
+        --test-suite "$SPREAD_PATH/desktop-installer" \
+        --iso "$ISO" \
+        --qemu-args-json "$SPREAD_PATH/runners/gui-vm/qemu-args.json" \
+        --cleanup-storage \
+        --suite Entire-Disk

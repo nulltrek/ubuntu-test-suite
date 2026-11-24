@@ -176,7 +176,7 @@ class QemuYarfRunner:
 
     def __init__(self) -> None:
         self.args = parse_args()
-        self.orig_ovmf_dir = f"{PATH_TO_SCRIPT}/../ovmf/"
+        self.orig_ovmf_dir = f"{PATH_TO_SCRIPT}/ovmf/"
         # pylint: disable=consider-using-with
         self.ovmf_dir = tempfile.TemporaryDirectory()
         self.copy_ovmf_vars()

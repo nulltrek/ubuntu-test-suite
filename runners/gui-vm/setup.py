@@ -39,8 +39,8 @@ def run(cmd):
 
 def main():
     run("apt-get update")
-    for package in PACKAGES:
-        run(f"DEBIAN_FRONTEND=noninteractive apt-get install -y {package}")
+    package_list = " ".join(PACKAGES)
+    run(f"DEBIAN_FRONTEND=noninteractive apt-get install -y {package_list}")
 
     for url, dest in REPOS.items():
         run(f"git clone {url} {dest}")
