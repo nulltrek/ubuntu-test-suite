@@ -11,7 +11,7 @@ suites:
       echo PREPARE
 
 include:
-  - ../../runners/dummy/
+  - ../../../runners/dummy/
   - examples/
 
 path: /home/test/ubuntu-test-suite

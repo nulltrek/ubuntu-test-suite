@@ -26,7 +26,7 @@ suites:
           $SPREAD_PATH/runners/gui-vm/setup.py
 
 include:
-  - ../../runners/gui-vm/
+  - ../../../runners/gui-vm/
   - desktop-installer/
 
 path: /workspace/tests
